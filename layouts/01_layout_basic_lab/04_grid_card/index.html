@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>04 grid card</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.scss">
 </head>
+
 <body>
     <header>
         <h1>04 grid card</h1>
     </header>
     <main>
-        <!-- Content here -->
+        <div class="card">
+            <div class="card__image">
+                <img src="https://images.unsplash.com/photo-1524666643752-b381eb00effb?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Card image">
+            </div>
+            <div class="card__content">
+                <h2 class="card__title">Title</h2>
+                <p class="card__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum inventore
+                    quos, eaque quod sint sed voluptas, temporibus, ut facilis sapiente eligendi magnam culpa laudantium
+                    iusto velit quaerat rem provident non?</p>
+                <p class="card__published">
+                    <span class="card__published-title">Published: </span>
+                    <span class="card__published-paragraph">March 20, 2020</span>
+                </p>
+
+                <button class="card__button">More info</button>
+            </div>
+        </div>
     </main>
 </body>
+
 </html>
