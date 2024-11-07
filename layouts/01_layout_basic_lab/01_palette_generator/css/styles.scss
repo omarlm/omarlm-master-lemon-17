@@ -8,13 +8,7 @@ $box-size-width: 70px;
 $border-radius: 8px;
 
 @function adjust-color($color, $amount) {
-    @if $amount < 0 {
-        @return color.adjust($color, $lightness: $amount);
-    }
-
-    @else {
-        @return color.adjust($color, $lightness: $amount);
-    }
+    @return color.adjust($color, $lightness: $amount);
 }
 
 @mixin color-palette($base-color) {
