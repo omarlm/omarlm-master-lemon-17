@@ -12,41 +12,24 @@ $border-radius: 8px;
 }
 
 @mixin color-palette($base-color) {
-    &--darken-4 {
-        background-color: adjust-color($base-color, -40%);
-    }
+    @for $i from -4 through 4 {
+        @if $i ==0 {
+            &--base {
+                background-color: $base-color;
+            }
+        }
 
-    &--darken-3 {
-        background-color: adjust-color($base-color, -30%);
-    }
+        @else if $i < 0 {
+            &--darken-#{abs($i)} {
+                background-color: adjust-color($base-color, $i * 10%);
+            }
+        }
 
-    &--darken-2 {
-        background-color: adjust-color($base-color, -20%);
-    }
-
-    &--darken-1 {
-        background-color: adjust-color($base-color, -10%);
-    }
-
-    &--base {
-        background-color: $base-color;
-        width: $box-size-width;
-    }
-
-    &--lighten-1 {
-        background-color: adjust-color($base-color, 10%);
-    }
-
-    &--lighten-2 {
-        background-color: adjust-color($base-color, 20%);
-    }
-
-    &--lighten-3 {
-        background-color: adjust-color($base-color, 30%);
-    }
-
-    &--lighten-4 {
-        background-color: adjust-color($base-color, 40%);
+        @else {
+            &--lighten-#{$i} {
+                background-color: adjust-color($base-color, $i * 10%);
+            }
+        }
     }
 }
 
@@ -74,6 +57,7 @@ $border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
+    // Aplicamos el mixin a cada fila específica de color
     &:nth-of-type(1) .container__box {
         @include color-palette($color-row-1);
     }
@@ -84,9 +68,5 @@ $border-radius: 8px;
 
     &:nth-of-type(3) .container__box {
         @include color-palette($color-row-3);
-    }
-
-    &__box-text {
-        text-align: center;
     }
 }
