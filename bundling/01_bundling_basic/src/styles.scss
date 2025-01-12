@@ -1,0 +1,15 @@
+$primary-color: #3498db;
+
+.title {
+    color: $primary-color;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.logo {
+    display: block;
+    margin: 1rem auto;
+    max-width: 150px;
+    height: auto;
+}
