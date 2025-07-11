@@ -1,0 +1,44 @@
+// @use '../themes/theme-red' as theme;
+@use '../themes/theme-blue' as theme;
+
+.main {
+  &__container {
+    font-family: theme.$font-family;
+    color: theme.$primary-color;
+  }
+}
+
+.box {
+  &__element {
+    width: 150px;
+    height: 80px;
+    padding: 20px;
+    margin: 5px;
+    border: 1px solid #CCC;
+    border-radius: theme.$border-radius;
+  }
+
+  &__element--base {
+    background-color: theme.$base-color;
+  }
+
+  &__element--important {
+    background-color: theme.$important-color;
+  }
+
+  &__element--warning {
+    background-color: theme.$warning-color;
+  }
+
+  &__element--primary-font {
+    font-family: theme.$primary-font-family;
+  }
+
+  &__element--secondary-font {
+    font-family: theme.$secondary-font-family;
+  }
+
+  &__element--shadow {
+    box-shadow: theme.$box-shadow;
+  }
+}

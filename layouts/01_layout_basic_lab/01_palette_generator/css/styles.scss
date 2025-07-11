@@ -1,0 +1,72 @@
+@use "sass:color";
+
+$color-row-1: #3498db;
+$color-row-2: #e74c3c;
+$color-row-3: #2ecc71;
+$box-size: 60px;
+$box-size-width: 70px;
+$border-radius: 8px;
+
+@function adjust-color($color, $amount) {
+    @return color.adjust($color, $lightness: $amount);
+}
+
+@mixin color-palette($base-color) {
+    @for $i from -4 through 4 {
+        @if $i ==0 {
+            &--base {
+                background-color: $base-color;
+            }
+        }
+
+        @else if $i < 0 {
+            &--darken-#{abs($i)} {
+                background-color: adjust-color($base-color, $i * 10%);
+            }
+        }
+
+        @else {
+            &--lighten-#{$i} {
+                background-color: adjust-color($base-color, $i * 10%);
+            }
+        }
+    }
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    &--color-palette {
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        gap: 10px;
+    }
+
+    &__box {
+        width: $box-size;
+        height: $box-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFF;
+        font-size: 12px;
+        border-radius: $border-radius;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    // Aplicamos el mixin a cada fila específica de color
+    &:nth-of-type(1) .container__box {
+        @include color-palette($color-row-1);
+    }
+
+    &:nth-of-type(2) .container__box {
+        @include color-palette($color-row-2);
+    }
+
+    &:nth-of-type(3) .container__box {
+        @include color-palette($color-row-3);
+    }
+}
