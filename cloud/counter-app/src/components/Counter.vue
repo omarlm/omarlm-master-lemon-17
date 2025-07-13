@@ -1,6 +1,6 @@
 <template>
   <div class="counter">
-    <h2>Contador con despliegue automático</h2>
+    <h2>Contador workflow</h2>
     <p class="count">{{ count }}</p>
     <button @click="increment">Incrementar</button>
     <button @click="decrement" class="ml-2">Decrementar</button>
